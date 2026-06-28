@@ -1,0 +1,156 @@
+.achievements-section {
+  padding: var(--section-padding);
+  background-color: var(--bg-primary);
+}
+
+.timeline-container {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+.timeline-line {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 24px;
+  width: 2px;
+  background-color: var(--border-glass);
+}
+
+.achievement-item {
+  position: relative;
+  margin-bottom: 3rem;
+  padding-left: 4rem;
+}
+
+.achievement-item:last-child {
+  margin-bottom: 0;
+}
+
+.achievement-icon-container {
+  position: absolute;
+  left: 8px;
+  top: 0;
+  width: 32px;
+  height: 32px;
+  background-color: var(--bg-primary);
+  border: 2px solid var(--accent);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent);
+  font-size: 0.875rem;
+  z-index: 2;
+}
+
+.achievement-card {
+  padding: 1.5rem;
+}
+
+.achievement-date {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--accent);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.achievement-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.25rem;
+}
+
+.achievement-type {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+/* Scattered / Stacked Photo Cards */
+.achievement-gallery {
+  margin-top: 1.25rem;
+  display: flex;
+  justify-content: center;
+}
+
+.scattered-stack {
+  position: relative;
+  width: 200px;
+  height: 160px;
+  margin: 1rem auto;
+}
+
+.scattered-card {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 14px;
+  overflow: hidden;
+  cursor: pointer;
+  border: 2.5px solid var(--border-glass);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+  background: var(--bg-secondary, #1a1a2e);
+  transition: box-shadow 0.3s ease;
+}
+
+.scattered-card.is-top {
+  border-color: var(--accent);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.2),
+    0 0 0 1px rgba(255, 255, 255, 0.05);
+}
+
+.scattered-card:hover {
+  box-shadow:
+    0 10px 40px rgba(0, 0, 0, 0.25),
+    0 0 0 1px rgba(255, 255, 255, 0.08);
+}
+
+.scattered-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  pointer-events: none;
+  user-select: none;
+}
+
+@media (min-width: 768px) {
+  .timeline-line {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .achievement-item {
+    width: 50%;
+    padding-left: 0;
+    padding-right: 3rem;
+  }
+
+  .achievement-item:nth-child(even) {
+    margin-left: auto;
+    padding-right: 0;
+    padding-left: 3rem;
+  }
+
+  .achievement-icon-container {
+    left: 100%;
+    transform: translateX(-50%);
+  }
+
+  .achievement-item:nth-child(even) .achievement-icon-container {
+    left: 0;
+  }
+
+  .scattered-stack {
+    width: 240px;
+    height: 180px;
+  }
+}
